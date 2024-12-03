@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../../core/images/images.dart';
+import '../../../../../core/utils/images.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -20,6 +20,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
         onRefresh: () async {
           // _fetchDataRefresh();
         },
+
         child: CustomScrollView(
           physics: const AlwaysScrollableScrollPhysics(),
           slivers: <Widget>[

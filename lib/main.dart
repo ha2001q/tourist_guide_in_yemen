@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'features/customer/home screen/presentation/pages/home.dart';
+import 'package:tourist_guide_in_yemen/features/auth/presentation/pages/login/login_screen.dart';
+import 'package:tourist_guide_in_yemen/features/customer/root_screen/root_screen.dart';
+
 import 'features/customer/splash/splash_screen.dart';
 
 void main() {
@@ -21,6 +23,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.green),
       home: SplashScreen(),
 
     );

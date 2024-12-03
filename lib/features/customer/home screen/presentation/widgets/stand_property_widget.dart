@@ -88,10 +88,10 @@
 //                     children: [
 //                       Positioned(
 //                         top: 5,
-//                         right: Locales.isDirectionRTL(context)
+//                         right: locales.isDirectionRTL(context)
 //                             ? 10
 //                             : null,
-//                         left: Locales.isDirectionRTL(context)
+//                         left: locales.isDirectionRTL(context)
 //                             ? null
 //                             : 10,
 //                         child: InkWell(
@@ -203,7 +203,7 @@
 //                   Align(
 //                     alignment: Alignment.centerRight,
 //                       child: Padding(
-//                         padding: Locales.isDirectionRTL(context)
+//                         padding: locales.isDirectionRTL(context)
 //                             ?const EdgeInsets.only(right: 15.0,top: 5.0, bottom: 5.0)
 //                             :const EdgeInsets.only(right: 15.0,top: 5.0, bottom: 5.0),
 //                         child: Text(
@@ -213,7 +213,7 @@
 //                   const SizedBox(height: 2.0,),
 //                   Padding(
 //                     padding: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 3.0),
-//                     child: Locales.isDirectionRTL(context)
+//                     child: locales.isDirectionRTL(context)
 //                         ? Row(
 //                         children: [
 //                           const Icon(Icons.location_on_outlined, size: 10,),

@@ -89,10 +89,10 @@
 //                   children: [
 //                     Positioned(
 //                       top: 5,
-//                       right: Locales.isDirectionRTL(context)
+//                       right: locales.isDirectionRTL(context)
 //                           ? 10
 //                           : null,
-//                       left: Locales.isDirectionRTL(context)
+//                       left: locales.isDirectionRTL(context)
 //                           ? null
 //                           : 10,
 //                       child: InkWell(
@@ -182,8 +182,8 @@
 //                         child: Center(
 //                           child: Text(
 //                             widget.propertyModel.results![widget.index].forSale ?? false
-//                                 ? Locales.string(context, "for_sale")
-//                                 : Locales.string(context, "for_rent"),
+//                                 ? locales.string(context, "for_sale")
+//                                 : locales.string(context, "for_rent"),
 //                             style: fontSmall.copyWith(
 //                               color: widget.propertyModel.results![widget.index].forSale ?? false
 //                                   ? Colors.white
@@ -204,10 +204,10 @@
 //                 height: double.infinity,
 //                 width: 142.0,
 //                 child: Column(
-//                   crossAxisAlignment: Locales.isDirectionRTL(context)?CrossAxisAlignment.start:CrossAxisAlignment.end,
+//                   crossAxisAlignment: locales.isDirectionRTL(context)?CrossAxisAlignment.start:CrossAxisAlignment.end,
 //                   children:  [
 //                     Padding(
-//                       padding: Locales.isDirectionRTL(context)
+//                       padding: locales.isDirectionRTL(context)
 //                           ?const EdgeInsets.only(right: 15.0,top: 5.0, bottom: 5.0)
 //                           :const EdgeInsets.only(right: 15.0,top: 5.0, bottom: 5.0),
 //                       child:  Text(
@@ -219,7 +219,7 @@
 //                     ),
 //                     Padding(
 //                       padding: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 3.0),
-//                       child: Locales.isDirectionRTL(context)
+//                       child: locales.isDirectionRTL(context)
 //                           ?  Row(
 //                               children: [
 //                                 const Icon(Icons.location_on_outlined, size: 10,),
@@ -259,7 +259,7 @@
 //                     ),
 //                     Padding(
 //                         padding: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 3.0),
-//                         child: Locales.isDirectionRTL(context)
+//                         child: locales.isDirectionRTL(context)
 //                             ?  Row(
 //                             children: [
 //                               const Icon(Icons.star, size: 10, color: Colors.amberAccent,),
@@ -299,7 +299,7 @@
 //                     ),
 //                     Expanded(
 //                         child: Padding(
-//                           padding: Locales.isDirectionRTL(context)
+//                           padding: locales.isDirectionRTL(context)
 //                               ?const EdgeInsets.only(right: 15.0,top: 5.0, bottom: 5.0)
 //                               :const EdgeInsets.only(right: 15.0,top: 5.0, bottom: 5.0),
 //                           child:  Align(

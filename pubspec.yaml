@@ -33,6 +33,7 @@ dependencies:
 
   flutter_locales: ^3.0.1
   flutter_svg: ^2.0.9
+  # bottom nav bar
   line_icons: ^2.0.3
   google_nav_bar: ^5.0.6
   # get management
@@ -41,6 +42,27 @@ dependencies:
   flutter_bloc: ^8.1.4
   #service locator
   get_it: ^7.6.7
+  # for saving data
+  shared_preferences: ^2.1.1
+  # for auto scroll widget
+  carousel_slider: ^4.2.1
+  # Group list view for chat page
+  grouped_list: ^5.1.2
+#  firebase dependency_validator:
+#  firebase_core: ^2.16.0
+#  cloud_firestore: ^4.9.0
+
+
+
+
+#  arb-dir: lib/l10n
+#  output-dir: lib/l10n
+#  template-arb-file: app_en_hk.arb
+#  output-localization-file: app_localizations.dart
+#  nullable-getter: false
+#  use-escaping: true
+#  synthetic-package: false // this line
+
 
 
 
@@ -66,6 +88,10 @@ flutter_launcher_icons:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
+  floor_generator: ^1.4.2
+  build_runner: ^2.4.4
+  intl: ^0.17.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -77,7 +103,7 @@ flutter:
   assets:
      - assets/images/
      - assets/svg/
-#     - assets/locales/
+     - assets/locales/
 
 
 
@@ -92,10 +118,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+     - family: "Lato"
+       fonts:
+         - asset: assets/fonts/Lato-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

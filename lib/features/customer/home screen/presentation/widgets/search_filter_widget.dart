@@ -53,7 +53,7 @@
 //                     Padding(
 //                       padding: const EdgeInsets.all(8.0),
 //                       child: Text(
-//                         Locales.string(context, "search_hint"),
+//                         locales.string(context, "search_hint"),
 //                         style: fontMedium.copyWith(color: Colors.grey),
 //                       ),
 //                     ),

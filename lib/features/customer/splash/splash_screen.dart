@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:tourist_guide_in_yemen/core/images/images.dart';
-import 'package:tourist_guide_in_yemen/features/customer/home%20screen/presentation/pages/home.dart';
+import 'package:tourist_guide_in_yemen/core/utils/images.dart';
+import 'package:tourist_guide_in_yemen/features/customer/root_screen/root_screen.dart';
+
+import '../../auth/presentation/pages/login/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -39,12 +39,10 @@ class _SplashScreenState extends State<SplashScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomePage(),
+                        builder: (context) => RootScreen(),
                       ),
                     );
                   },
-
-
                   child: Container(
                     alignment: Alignment.center,
                     height: 70,
