@@ -51,6 +51,7 @@ dependencies:
 #  firebase dependency_validator:
 #  firebase_core: ^2.16.0
 #  cloud_firestore: ^4.9.0
+  email_validator: '^2.1.16'
 
 
 
