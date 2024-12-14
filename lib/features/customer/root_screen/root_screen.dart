@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:tourist_guide_in_yemen/features/customer/home%20screen/presentation/pages/home.dart';
-import 'package:tourist_guide_in_yemen/features/customer/profile_screen/profile_screen.dart';
+import 'package:tourist_guide_in_yemen/features/customer/profile_screen/presentation/pages/profile_screen.dart';
 import '../favorite_screen/presentation/pages/favorite_screen.dart';
 import '../setting_screen/setting_screen.dart';
 

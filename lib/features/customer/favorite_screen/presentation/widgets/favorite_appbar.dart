@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:tourist_guide_in_yemen/core/utils/styles.dart';
 import '../../../../../core/utils/images.dart';
 
 class FavoriteAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const FavoriteAppBar({super.key, required this.onTap});
+  const FavoriteAppBar({super.key, required this.onTap,required this.title,});
   final VoidCallback onTap;
+  final String title;
+  // final Icon icon;
 
 
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        title: Text("Favorite",style: fontLargeBold,),
+        title: Text(title,style: fontLargeBold,),
         centerTitle: true,
         actions:[
           Padding(

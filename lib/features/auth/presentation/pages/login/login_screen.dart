@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:tourist_guide_in_yemen/core/utils/images.dart';
@@ -16,8 +18,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
 
-  TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
+   TextEditingController email = TextEditingController();
+   TextEditingController password = TextEditingController();
 
   final _loginForm = GlobalKey<FormState>();
 
@@ -31,14 +33,8 @@ class _LoginScreenState extends State<LoginScreen> {
                Container(
                 width: double.infinity,
                 height: double.infinity,
-
-
-                 child:SvgPicture.asset(Images.janbiahBack)
+                 child:SvgPicture.asset(Images.janbiahBack,fit: BoxFit.fill,)
                ),
-
-
-
-
                 SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                  child: Padding(
@@ -46,13 +42,15 @@ class _LoginScreenState extends State<LoginScreen> {
                    child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+
+                      // SvgPicture.asset(Images.janbiahBack,fit: BoxFit.cover,),
                       Text("Login",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold),),
-                      SizedBox(height: 40,),
+                      SizedBox(height: 54,),
                       Text("Happy to see you again! Please enter your email and",style: TextStyle(color: Colors.grey),),
                       Text("password to login to your account.",style: TextStyle(color: Colors.grey)),
                       SizedBox(height: 110,),
                       Container(
-                        width: double.infinity,
+                        // width: double.infinity,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
                           color: Color(0xffDBC9BD),
@@ -78,22 +76,19 @@ class _LoginScreenState extends State<LoginScreen> {
                                       if (value == null || value.isEmpty) {
                                         return "enter Email";
                                       }
-                                      // if (RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(this as String)) {
-                                      //   return "just_letter";
-                                      // }
+                                      if (!RegExp(r'^[a-zA-Z\s]*$').hasMatch(value!)) {
+                                        return "just_letter";
+                                      }
                                       return null;
                                     },
                                     onSaved: (value) {
                                       email = email;
                                       // = value!;
                                     },
-
                                     controller:email,
                                     keyboardType: TextInputType.emailAddress,
                                   ),
-
                                   SizedBox(height: 15,),
-
                                   TextFormField(
                                     decoration: InputDecoration(
                                       filled: true,
@@ -108,47 +103,46 @@ class _LoginScreenState extends State<LoginScreen> {
                                       if (value == null || value.isEmpty) {
                                         return "enter password";
                                       }
-                                      // if (RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(this as String)) {
-                                      //   return "just_letter";
-                                      // }
+                                      if (!RegExp(r'^[a-zA-Z\s]*$').hasMatch(value!)) {
+                                        return "just_letter";
+                                      }
                                       return null;
                                     },
                                     onSaved: (value) {
                                       password = password;
                                       // = value!;
                                     },
-
                                     controller:password,
                                     keyboardType: TextInputType.visiblePassword,
                                   ),
                                   SizedBox(height: 20,),
                                   InkWell(
-                                    onTap:(){
-                                      // Navigator.push(
-                                      //   context,
-                                      // MaterialPageRoute(builder: (context)=>RootScreen()));
-                                    },
-
-
-                                       child: Container(
-                                         height: 45,
-                                         width: 280,
-                                         decoration: BoxDecoration(
-                                           borderRadius: BorderRadius.circular(20),
-                                           color: Color(0xffDE7254),
-                                         ),
-                                         child: Text("Login",style: fontLarge,textAlign: TextAlign.center,),
-                                       )
-                                    ),
-
-
-
-
+                                      onTap:(){
+                                        if (_loginForm.currentState!.validate()) {
+                                          try{
+                                           email = email.text as TextEditingController;
+                                           password = password.text as TextEditingController;
+                                          }catch(onPressed){
+                                            Navigator.push(
+                                            context,
+                                             MaterialPageRoute(builder: (context)=>RootScreen()));
+                                          }
+                                        }
+                                      },
+                                      child: Container(
+                                        height: 45,
+                                        width: 280,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(20),
+                                          color: Color(0xffDE7254),
+                                        ),
+                                        child: Text("Login",style: fontLarge,textAlign: TextAlign.center,),
+                                      )
+                                  ),
                                 ],
                               ),
                            ),
                           ),
-
                         ),
                       SizedBox(height: 15,),
                       Row(
@@ -178,19 +172,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           )
                         ],
                       ),
-
-
-
                       const SizedBox(height: 30.0),
                       Text("Sign in with",
                           style: fontSmallBold
                       ),
                       const SizedBox(height: 10.0),
-
-
-
-
-
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -244,9 +230,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
 
                           InkWell(
-                            onTap: (){
-
-                            },
+                            onTap: (){},
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Container(
@@ -294,9 +278,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           )
                         ],
                       ),
-
-
-
 
                     ],
                              ),

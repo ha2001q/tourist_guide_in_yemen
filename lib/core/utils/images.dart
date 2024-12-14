@@ -13,6 +13,8 @@ class Images {
   static const String janbiahBack = 'assets/svg/janbiah.svg';
   static const String facebookIcon = 'assets/svg/facebookIcon.svg';
   static const String googleIcon = 'assets/svg/googleIcon.svg';
+  static const String editIcon = 'assets/svg/editIcon.svg';
+
 
 
 

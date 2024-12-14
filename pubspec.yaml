@@ -54,6 +54,10 @@ dependencies:
   email_validator: '^2.1.16'
 
 
+  # rating section
+  flutter_rating_bar: ^4.0.1
+
+
 
 
 #  arb-dir: lib/l10n

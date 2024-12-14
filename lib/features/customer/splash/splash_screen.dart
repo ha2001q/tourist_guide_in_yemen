@@ -1,9 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tourist_guide_in_yemen/core/utils/images.dart';
-import 'package:tourist_guide_in_yemen/features/customer/root_screen/root_screen.dart';
+import 'package:tourist_guide_in_yemen/features/customer/add_comments/add_comments.dart';
 
-import '../../auth/presentation/pages/login/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -12,7 +13,25 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMixin {
+  late AnimationController animationController;
+
+  @override
+  void initState() {
+  super.initState();
+  animationController =
+  AnimationController(duration: Duration(seconds: 2), vsync: this);
+  animationController.repeat();
+
+  Timer(
+  Duration(seconds: 10),
+  () => Navigator.of(context)
+      .pushReplacement(MaterialPageRoute(builder: (context) => AddComments())));
+  }
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,26 +53,26 @@ class _SplashScreenState extends State<SplashScreen> {
                 Text("Welcome to Yemen",style: TextStyle(fontSize:30,fontWeight: FontWeight.bold,color:Colors.blueGrey),),
                 Text("tourist guide",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.blueGrey),),
                 SizedBox(height: 110,),
-                InkWell(
-                  onTap:() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginScreen(),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: 70,
-                   width: 350,
-                   decoration: BoxDecoration(
-                     borderRadius: BorderRadius.circular(100),
-                     color: Colors.deepOrangeAccent
-                   ),
-                    child: Text("Lets Start!",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
-                  ),
-                )
+                // InkWell(
+                //   onTap:() {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) => LoginScreen(),
+                //       ),
+                //     );
+                //   },
+                //   child: Container(
+                //     alignment: Alignment.center,
+                //     height: 70,
+                //    width: 350,
+                //    decoration: BoxDecoration(
+                //      borderRadius: BorderRadius.circular(100),
+                //      color: Colors.deepOrangeAccent
+                //    ),
+                //     child: Text("Lets Start!",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
+                //   ),
+                // )
               ],
             )
           ),

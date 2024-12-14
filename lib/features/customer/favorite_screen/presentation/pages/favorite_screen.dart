@@ -32,8 +32,12 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Icon icon=SvgPicture.asset(Images.trushIcon,) as Icon;
     return Scaffold(
-      appBar: FavoriteAppBar(onTap: () => {},),
+      appBar: FavoriteAppBar(
+        title:"Favorite",
+        // icon:SvgPicture.asset(Images.trushIcon,) as Icon ,
+        onTap: () => {},),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,

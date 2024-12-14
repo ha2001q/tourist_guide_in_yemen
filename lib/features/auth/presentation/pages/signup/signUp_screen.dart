@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tourist_guide_in_yemen/features/auth/presentation/pages/login/login_screen.dart';
 
 import '../../../../../core/utils/images.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../../customer/root_screen/root_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -16,9 +14,9 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
 
+  TextEditingController name = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
-  TextEditingController name = TextEditingController();
 
 
   final _SignUpForm = GlobalKey<FormState>();
@@ -32,14 +30,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Container(
                     width: double.infinity,
                     height: double.infinity,
-
-
-                    child:SvgPicture.asset(Images.janbiahBack)
+                    child:SvgPicture.asset(Images.janbiahBack,fit: BoxFit.fill,)
                 ),
-
-
-
-
                 SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: Padding(
@@ -48,7 +40,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text("Sign Up",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold),),
-                        SizedBox(height: 40,),
+                        SizedBox(height: 54,),
                         Text("Happy to see you again! Please enter your email and",style: TextStyle(color: Colors.grey),),
                         Text("password to login to your account.",style: TextStyle(color: Colors.grey)),
                         SizedBox(height: 110,),
@@ -79,24 +71,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                       if (value == null || value.isEmpty) {
                                         return "enter Full name";
                                       }
-                                      // if (RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(this as String)) {
-                                      //   return "just_letter";
-                                      // }
+                                      if (!RegExp(r'^[a-zA-Z\s]*$').hasMatch(value!)) {
+                                        return "just_letter";
+                                      }
                                       return null;
                                     },
                                     onSaved: (value) {
                                       name = name;
                                       // = value!;
                                     },
-
                                     controller:name,
                                     keyboardType: TextInputType.name,
                                   ),
-
                                   SizedBox(height: 15,),
-
-
-
                                   TextFormField(
                                     decoration: InputDecoration(
                                       filled: true,
@@ -111,22 +98,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                       if (value == null || value.isEmpty) {
                                         return "enter Email";
                                       }
-                                      // if (RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(this as String)) {
-                                      //   return "just_letter";
-                                      // }
+                                      if (!RegExp(r'^[a-zA-Z\s]*$').hasMatch(value!)) {
+                                        return "just_letter";
+                                      }
                                       return null;
                                     },
                                     onSaved: (value) {
                                       email = email;
                                       // = value!;
                                     },
-
                                     controller:email,
                                     keyboardType: TextInputType.emailAddress,
                                   ),
-
                                   SizedBox(height: 15,),
-
                                   TextFormField(
                                     decoration: InputDecoration(
                                       filled: true,
@@ -141,28 +125,34 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                       if (value == null || value.isEmpty) {
                                         return "enter password";
                                       }
-                                      // if (RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(this as String)) {
-                                      //   return "just_letter";
-                                      // }
+                                      if (!RegExp(r'^[a-zA-Z\s]*$').hasMatch(value!)) {
+                                        return "just_letter";
+                                      }
                                       return null;
                                     },
                                     onSaved: (value) {
                                       password = password;
                                       // = value!;
                                     },
-
                                     controller:password,
                                     keyboardType: TextInputType.visiblePassword,
                                   ),
                                   SizedBox(height: 50,),
                                   InkWell(
                                       onTap:(){
-                                        Navigator.push(
-                                          context,
-                                        MaterialPageRoute(builder: (context)=>LoginScreen()));
+                                        if (_SignUpForm.currentState!.validate()) {
+                                          try{
+                                            name = name.text as TextEditingController;
+                                            email = email.text as TextEditingController;
+                                            password = password.text as TextEditingController;
+
+                                          }catch(onPressed){
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(builder: (context)=>LoginScreen()));
+                                          }
+                                        }
                                       },
-
-
                                       child: Container(
                                         height: 45,
                                         width: 280,
@@ -170,18 +160,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                           borderRadius: BorderRadius.circular(20),
                                           color: Color(0xffDE7254),
                                         ),
-                                        child: Text("Sign Up",style: fontLarge,textAlign: TextAlign.center,),
+                                        child: Text("Login",style: fontLarge,textAlign: TextAlign.center,),
                                       )
                                   ),
-
-
-
-
                                 ],
                               ),
                             ),
                           ),
-
                         ),
                         SizedBox(height: 15,),
                         Row(
@@ -197,15 +182,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ],
                         ),
                         SizedBox(height: 20,),
-
-
-
-
-
-
-
-
-
                       ],
                     ),
                   ),
